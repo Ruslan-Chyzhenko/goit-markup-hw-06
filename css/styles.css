@@ -67,7 +67,7 @@ img {
 }
 
 .header-add {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 12px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -102,6 +102,7 @@ img {
 }
 
 .header-list-item {
+  display: none;
   color: #2e2f42;
   font-family: Roboto;
   font-size: 16px;
@@ -203,6 +204,169 @@ img {
   /* border 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
+/* === Header-menu-320px === */
+
+.mob-menu-container {
+  position: relative;
+  margin: 0 auto;
+}
+
+.modal-mob {
+  position: fixed;
+  margin-top: 0;
+  margin: 0 auto;
+  padding: 72px 24px 24px 24px;
+  max-width: 768px;
+  min-height: 640px;
+  flex-shrink: 0;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mob-btn-header {
+  display: flex;
+  background-color: #fcfcfc;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  top: 24px;
+  right: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mob-btn-close {
+  position: absolute;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mod-btn-icon {
+  position: absolute;
+  display: flex;
+  color: #111;
+  justify-content: center;
+  align-items: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-mob-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.mob-list-item {
+}
+
+.mob-link {
+  margin: 0 auto;
+  color: #2e2f42;
+  font-family: Roboto;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.mob-current {
+  color: #404bbf;
+  font-family: Roboto;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.header-mob-contact {
+}
+.header-mob-add {
+  margin-top: 168px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.mob-add-item {
+}
+
+.mob-link-add {
+  color: #434455;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.mob-add-blue {
+  color: #4d5ae5;
+
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2; /* 120% */
+  letter-spacing: 0.02em;
+}
+
+.icon-mob-list {
+  display: flex;
+  margin-top: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.icon-mob-item {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.icon-mob-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-mob-svg {
+  fill: #f4f4fd;
+}
+
+.icon-mob-link::before,
+.icon-mob-link::after {
+  width: auto;
+  height: auto;
+  content: "";
+  background-color: #4d5ae5;
+}
+
+.icon-mob-link:hover {
+  background-color: #404bbf;
+}
+
+.icon-mob-link:focus {
+  background-color: #404bbf;
+}
+
 /* Main */
 
 ul {
@@ -267,6 +431,10 @@ a:focus {
     padding-bottom: 0;
   }
 
+  .mob-menu-container {
+    display: none;
+  }
+
   .logo-title {
     flex-direction: row;
     flex-wrap: wrap;
@@ -283,6 +451,7 @@ a:focus {
   }
 
   .header-list-item {
+    display: flex;
     /* flex-basis: calc((100% - 24px) / 2); */
   }
 
@@ -1100,29 +1269,34 @@ button {
 @media screen and (min-width: 768px) and (max-width: 1157px) {
   .container-footer {
     max-width: 584px;
+    height: 456px;
     padding: 0 15px;
     margin: 0 auto;
-    /* display: flex;
-    align-items: baseline; */
+    padding-top: 96px;
+    padding-bottom: 96px;
+    margin-left: auto;
+    margin-right: auto
+    display: flex;
+    align-items: baseline;
   }
 }
 
 @media (min-width: 768px) {
+  .container-footer {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+     }
+
   .container-logo-text {
-    /* flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 24px;
-    row-gap: 72px; */
+  
   }
 
   .icon-footer-list {
-    /* flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 24px;
-    row-gap: 72px; */
-  }
+    }
 
   .icon-footer-item {
+    
   }
 }
 
@@ -1133,13 +1307,23 @@ button {
 }
 
 @media (min-width: 1158px) {
-  .container-footer {
+  .container-footer {    
+    width: 1158px;
+    height: 312px;
+    padding: 0 15px;
+    margin: 0 auto;
+    align-items: baseline;
     /* padding-top: 120px;
     padding-bottom: 120px; */
   }
 
   .icon-footer-list {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: flex;
+  margin-top: 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
   }
 
   .footer-icon {
@@ -1147,18 +1331,11 @@ button {
   }
 
   .footer-text {
-    max-width: 264px;
-    color: #f4f4fd;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-  }
+    }
 
   .footer-input-subtitle {
-    /* margin-top: 100px; */
+  
+    
   }
 
   .footer-form-email {
@@ -1170,8 +1347,34 @@ button {
     margin-right: 120px;
   }
 
+.icon-footer-list {
+  /* flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px; */
+}
+
   .icon-footer-item {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
   }
+}
+
+.icon-footer-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-icon {
+  margin-right: 80px;
+  padding: 100px auto;  
 }
 
 /* ============ Modal ============== */
@@ -1492,7 +1695,7 @@ button {
 
 /* === Modal - Responsive === */
 
-@media screen and (min-width: 768px) and (max-width: 1157px) {
+@media screen and (min-width: 768px) {
   .modal {
     width: 408px;
     height: 584px;
@@ -1503,17 +1706,23 @@ button {
   }
 }
 
+/* and (max-width: 1157px) */
+
 @media (min-width: 768px) {
   .modal {
+  }
+
+  .modal-title {
+    padding-top: 72px;
   }
 }
 
 @media screen and (min-width: 1158px) {
   .modal {
-    width: 408px;
+    /* width: 408px;
     height: 584px;
     padding: 0 15px;
-    margin: 0 auto;
+    margin: 0 auto; */
   }
 }
 
