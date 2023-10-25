@@ -1406,13 +1406,14 @@ button {
   }
 
   .footer-icon {
-    margin: auto;
+    /* margin: auto; */
     margin-right: 80px;
     transform: none;
     /* padding: 100px auto; */
   }
 
   .footer-text {
+    width: 264px;
   }
 
   .footer-input-subtitle {
@@ -1421,6 +1422,14 @@ button {
   .footer-form-email {
     display: flex;
     gap: 24px;
+  }
+
+  .footer-email-icon {
+    margin-left: auto;
+  }
+
+  .footer.send-btn {
+    gap: 16px;
   }
 
   .container-logo-text {
